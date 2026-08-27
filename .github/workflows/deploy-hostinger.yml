@@ -1,0 +1,44 @@
+name: Deploy Hostinger (FTP)
+
+# Publica a pasta de deploy no Hostinger via FTP.
+# NÃO roda sozinho: exige acionamento manual — a publicação é um gate humano.
+# Antes do primeiro uso, cadastre em Settings > Secrets and variables > Actions:
+#   FTP_HOST, FTP_USER, FTP_PASSWORD
+# Opcional (variable): FTP_REMOTE_DIR  (padrão: public_html/)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmar:
+        description: 'Digite PUBLICAR para confirmar o deploy em produção'
+        required: true
+        default: ''
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir confirmação
+        run: |
+          if [ "${{ github.event.inputs.confirmar }}" != "PUBLICAR" ]; then
+            echo "::error::Digite PUBLICAR para confirmar."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - name: Enviar por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./deploy-vercel/
+          server-dir: ${{ vars.FTP_REMOTE_DIR || 'public_html/' }}
+          # db-config.php e uploads/ vivem só no servidor — nunca sobrescrever
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/db-config.php
+            **/uploads/**
+            **/vercel.json

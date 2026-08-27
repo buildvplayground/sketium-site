@@ -33,10 +33,29 @@
 - [x] 1. Material extraído do Drive (rclone — 42 arquivos, 131 MB)
 - [x] 2. Pastas organizadas (scaffold-projeto)
 - [x] 2b. Repositório GitHub criado (`dev-buildv/sketium-site` privado)
-- [ ] 3. Design system
-- [ ] 4. Copy estruturada (extrair-copy — Ramo B, copy provisória)
-- [ ] 5. Front-end (gerar-frontend + revisar-frontend)
-- [ ] 6. Ajustes finais (imagens .webp, responsividade 320px+)
-- [ ] 7. Módulos LGPD + tags
-- [ ] 8. Revisão humana
-- [ ] 9. Deploy (gate humano)
+- [x] 3. Design system (paleta/tipografia da marca real; direção de estilo + anti-padrões)
+- [x] 4. Copy estruturada (Ramo B — provisória, minerada do portfólio e dos folders)
+- [x] 5. Front-end (3 páginas, HTML+CSS+JS vanilla; auditoria adversarial sem bloqueantes)
+- [x] 6. Ajustes finais (imagens -91%, overflow 0 de 320→1920px, contraste sem falhas)
+- [x] 7. Módulos LGPD (cookies + Política + Fornecedores + backend PHP); tags pendentes de ID
+- [ ] 8. Revisão humana  ← **VOCÊ ESTÁ AQUI**
+- [ ] 9. Deploy (gate humano — falta hospedagem, domínio e secrets)
+
+## Entregáveis
+- `Site/` — código-fonte (3 páginas + PHP + .htaccess)
+- `deploy-vercel/` — pasta estática publicável (2,5 MB), **é a única versionada**
+- `.github/workflows/deploy-hostinger.yml` — deploy por FTP, disparo manual
+- `design-system/` — tokens.css, design-system.md, direcao-estilo.md
+- `brief-pack.md` — referência de layout, eixos de variação e decisões
+
+## Verificações medidas (não estimadas)
+| Item | Resultado |
+|---|---|
+| Overflow horizontal (320→1920px, 3 páginas) | **0 px** |
+| Contraste WCAG AA no DOM renderizado | **0 falhas** |
+| Alvos de toque < 24px (WCAG 2.5.8) | **0** |
+| Erros de JavaScript | **0** nas 3 páginas |
+| Imagens | 22 MB → 2,1 MB (**-91%**) |
+| Formulários em CTA de orçamento | **0** (só botão WhatsApp) |
+| Blocos invisíveis após varrer a página | **0** |
+| Animações rodando ao fim do scroll | **0** (entrada instantânea no fim) |
