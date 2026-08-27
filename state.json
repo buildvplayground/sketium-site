@@ -12,66 +12,150 @@
     "motivo": "O questionário 'Aprofundamento' do Drive veio EM BRANCO e as pastas 02 (Criativos) e 03 (Copy + Backup Site Antigo) estão vazias. Toda a copy foi minerada do Portfolio_Sketium.pdf (15 páginas) e dos 2 folders institucionais. Nenhum fato, número ou credencial foi inventado."
   },
   "etapas": [
-    { "n": 1, "nome": "Extrair do Drive", "status": "done",
-      "nota": "rclone — 42 arquivos, 131 MB. Sem pasta Obsoleto." },
-    { "n": 2, "nome": "Organizar pastas", "status": "done",
-      "nota": "Marca/ 17 · Copys/ 8 · imagens/ 15. Extensões ausentes corrigidas por assinatura de arquivo." },
-    { "n": "2b", "nome": "Repositório GitHub", "status": "done",
-      "repo": "dev-buildv/sketium-site (privado)" },
-    { "n": 3, "nome": "Design system", "status": "done",
-      "nota": "Paleta e tipografia da marca REAL (PADRÃO DE IDENTIDADE VISUAL.xlsx): laranja #EA783B, cinzas #CDCCCA/#727273, navy #011627 amostrado dos folders; Montserrat. ui-ux-pro-max consultado só para direção de estilo e anti-padrões." },
-    { "n": 4, "nome": "Copy (provisória — Ramo B)", "status": "done",
-      "nota": "WhatsApp, Instagram e endereço são REAIS (extraídos do portfólio) — não são placeholders." },
-    { "n": 5, "nome": "Front-end", "status": "done",
-      "nota": "HTML+CSS+JS vanilla, 3 páginas. Referência macro fqm + design-bank. Motor de movimento próprio (reveal em 3 camadas, títulos em máscara, parallax ≤0.12, barra de leitura). revisar-frontend: 0 achados bloqueantes." },
-    { "n": 6, "nome": "Ajustes finais", "status": "done",
-      "nota": "Imagens 22 MB → 2,1 MB (-91%) em .webp. Overflow 0 de 320 a 1920px nas 3 páginas. Contraste WCAG: 0 falhas medidas no DOM. Alvos de toque ≥24px." },
-    { "n": 7, "nome": "Tags e módulos LGPD", "status": "done",
-      "nota": "Banner de cookies (emite cookie_consent no dataLayer), Política de Privacidade, Fornecedores/Trabalhe Conosco e backend PHP instalados. GTM/Merlin pulados por falta de IDs." },
-    { "n": 8, "nome": "Revisão humana", "status": "doing",
-      "nota": "Preview local em http://127.0.0.1:4180" },
-    { "n": 9, "nome": "Deploy", "status": "blocked",
-      "nota": "deploy-vercel/ pronto e versionado; workflow FTP pronto (manual). Falta definir hospedagem, domínio e secrets." }
+    {
+      "n": 1,
+      "nome": "Extrair do Drive",
+      "status": "done",
+      "nota": "rclone — 42 arquivos, 131 MB. Sem pasta Obsoleto."
+    },
+    {
+      "n": 2,
+      "nome": "Organizar pastas",
+      "status": "done",
+      "nota": "Marca/ 17 · Copys/ 8 · imagens/ 15. Extensões ausentes corrigidas por assinatura de arquivo."
+    },
+    {
+      "n": "2b",
+      "nome": "Repositório GitHub",
+      "status": "done",
+      "repo": "dev-buildv/sketium-site (privado)"
+    },
+    {
+      "n": 3,
+      "nome": "Design system",
+      "status": "done",
+      "nota": "Paleta e tipografia da marca REAL (PADRÃO DE IDENTIDADE VISUAL.xlsx): laranja #EA783B, cinzas #CDCCCA/#727273, navy #011627 amostrado dos folders; Montserrat. ui-ux-pro-max consultado só para direção de estilo e anti-padrões."
+    },
+    {
+      "n": 4,
+      "nome": "Copy (provisória — Ramo B)",
+      "status": "done",
+      "nota": "WhatsApp, Instagram e endereço são REAIS (extraídos do portfólio) — não são placeholders."
+    },
+    {
+      "n": 5,
+      "nome": "Front-end",
+      "status": "done",
+      "nota": "HTML+CSS+JS vanilla, 3 páginas. Referência macro fqm + design-bank. Motor de movimento próprio (reveal em 3 camadas, títulos em máscara, parallax ≤0.12, barra de leitura). revisar-frontend: 0 achados bloqueantes."
+    },
+    {
+      "n": 6,
+      "nome": "Ajustes finais",
+      "status": "done",
+      "nota": "Imagens 22 MB → 2,1 MB (-91%) em .webp. Overflow 0 de 320 a 1920px nas 3 páginas. Contraste WCAG: 0 falhas medidas no DOM. Alvos de toque ≥24px."
+    },
+    {
+      "n": 7,
+      "nome": "Tags e módulos LGPD",
+      "status": "done",
+      "nota": "Banner de cookies (emite cookie_consent no dataLayer), Política de Privacidade, Fornecedores/Trabalhe Conosco e backend PHP instalados. GTM/Merlin pulados por falta de IDs."
+    },
+    {
+      "n": 8,
+      "nome": "Revisão humana",
+      "status": "doing",
+      "nota": "Preview local em http://127.0.0.1:4180"
+    },
+    {
+      "n": 9,
+      "nome": "Deploy",
+      "status": "blocked",
+      "nota": "deploy-vercel/ pronto e versionado; workflow FTP pronto (manual). Falta definir hospedagem, domínio e secrets."
+    }
   ],
   "pendencias": [
-    { "id": "copy-oficial", "area": "conteudo", "bloqueia": "revisao",
+    {
+      "id": "copy-oficial",
+      "area": "conteudo",
+      "bloqueia": "revisao",
       "titulo": "Copy oficial do cliente",
-      "detalhe": "A copy no ar é PROVISÓRIA, minerada do portfólio e dos folders. O questionário de Aprofundamento veio em branco. Revisar Copys/copy-estruturada.md e confirmar/substituir." },
-    { "id": "email", "area": "conteudo", "bloqueia": "deploy",
+      "detalhe": "A copy no ar é PROVISÓRIA, minerada do portfólio e dos folders. O questionário de Aprofundamento veio em branco. Revisar Copys/copy-estruturada.md e confirmar/substituir."
+    },
+    {
+      "id": "email",
+      "area": "conteudo",
+      "bloqueia": "deploy",
       "titulo": "E-mail comercial",
-      "detalhe": "Não consta em nenhum material do Drive. Necessário para o rodapé e para o item 1 da Política de Privacidade." },
-    { "id": "cnpj-dpo", "area": "juridico", "bloqueia": "deploy",
+      "detalhe": "Não consta em nenhum material do Drive. Necessário para o rodapé e para o item 1 da Política de Privacidade."
+    },
+    {
+      "id": "cnpj-dpo",
+      "area": "juridico",
+      "bloqueia": "deploy",
       "titulo": "CNPJ e e-mail do encarregado (DPO)",
-      "detalhe": "Marcados como [A CONFIRMAR] em politica-de-privacidade.html, item 1." },
-    { "id": "nome-responsavel", "area": "conteudo", "bloqueia": "revisao",
+      "detalhe": "Marcados como [A CONFIRMAR] em politica-de-privacidade.html, item 1."
+    },
+    {
+      "id": "nome-responsavel",
+      "area": "conteudo",
+      "bloqueia": "revisao",
       "titulo": "Nome e CREA do engenheiro responsável",
-      "detalhe": "O portfólio descreve a trajetória mas nunca cita o nome. A seção 'Sobre' está impessoal por isso. Informar nome + CREA dá muito mais autoridade." },
-    { "id": "clientes-citados", "area": "juridico", "bloqueia": "deploy",
+      "detalhe": "O portfólio descreve a trajetória mas nunca cita o nome. A seção 'Sobre' está impessoal por isso. Informar nome + CREA dá muito mais autoridade."
+    },
+    {
+      "id": "clientes-citados",
+      "area": "juridico",
+      "bloqueia": "deploy",
       "titulo": "Autorização para citar obras e órgãos nominalmente",
-      "detalhe": "O site cita AGEHAB, GOINFRA, GETEC, UFG, CBMGO e nomes de obras (Villa Romana, Alto da Boa Vista, Rancho Albernaz, Casa MaJu). Confirmar se há autorização de uso." },
-    { "id": "hospedagem", "area": "infra", "bloqueia": "deploy",
+      "detalhe": "O site cita AGEHAB, GOINFRA, GETEC, UFG, CBMGO e nomes de obras (Villa Romana, Alto da Boa Vista, Rancho Albernaz, Casa MaJu). Confirmar se há autorização de uso."
+    },
+    {
+      "id": "hospedagem",
+      "area": "infra",
+      "bloqueia": "deploy",
       "titulo": "Definir hospedagem e domínio",
-      "detalhe": "Não informada. Domínio assumido nos metadados: sketium.com.br — CONFIRMAR. Vercel (Root Directory = deploy-vercel, preset Other/static) ou Hostinger (workflow FTP pronto)." },
-    { "id": "form-vercel", "area": "infra", "bloqueia": "formulario",
+      "detalhe": "Não informada. Domínio assumido nos metadados: sketium.com.br — CONFIRMAR. Vercel (Root Directory = deploy-vercel, preset Other/static) ou Hostinger (workflow FTP pronto)."
+    },
+    {
+      "id": "form-vercel",
+      "area": "infra",
+      "bloqueia": "formulario",
       "titulo": "Se for Vercel: o formulário de fornecedores precisa de backend",
-      "detalhe": "enviar-cadastro.php só roda em PHP (Hostinger/cPanel). No Vercel é preciso trocar por uma Serverless Function ou apontar o cadastro para WhatsApp/e-mail." },
-    { "id": "secrets-ftp", "area": "infra", "bloqueia": "deploy",
+      "detalhe": "enviar-cadastro.php só roda em PHP (Hostinger/cPanel). No Vercel é preciso trocar por uma Serverless Function ou apontar o cadastro para WhatsApp/e-mail."
+    },
+    {
+      "id": "secrets-ftp",
+      "area": "infra",
+      "bloqueia": "deploy",
       "titulo": "Secrets FTP (se Hostinger)",
-      "detalhe": "Cadastrar FTP_HOST, FTP_USER e FTP_PASSWORD em Settings > Secrets do repo. Opcional: variable FTP_REMOTE_DIR." },
-    { "id": "banco", "area": "infra", "bloqueia": "formulario",
+      "detalhe": "Cadastrar FTP_HOST, FTP_USER e FTP_PASSWORD em Settings > Secrets do repo. Opcional: variable FTP_REMOTE_DIR."
+    },
+    {
+      "id": "banco",
+      "area": "infra",
+      "bloqueia": "formulario",
       "titulo": "Banco MySQL + db-config.php",
-      "detalhe": "Criar o banco e copiar db-config.example.php para db-config.php NO SERVIDOR. Sem isso o cadastro de fornecedores não grava. A tabela é criada sozinha no primeiro envio." },
-    { "id": "tags", "area": "marketing", "bloqueia": "nada",
+      "detalhe": "Criar o banco e copiar db-config.example.php para db-config.php NO SERVIDOR. Sem isso o cadastro de fornecedores não grava. A tabela é criada sozinha no primeiro envio."
+    },
+    {
+      "id": "tags",
+      "area": "marketing",
+      "bloqueia": "nada",
       "titulo": "IDs de GTM/GA4/Pixel e Merlin",
-      "detalhe": "Não instalados por falta de IDs. O banner de cookies já emite o evento cookie_consent no dataLayer, com analytics_storage/ad_storage, para as tags respeitarem a LGPD." },
-    { "id": "fotos-extras", "area": "conteudo", "bloqueia": "nada",
+      "detalhe": "Não instalados por falta de IDs. O banner de cookies já emite o evento cookie_consent no dataLayer, com analytics_storage/ad_storage, para as tags respeitarem a LGPD."
+    },
+    {
+      "id": "fotos-extras",
+      "area": "conteudo",
+      "bloqueia": "nada",
       "titulo": "Mais fotos de obra executada",
-      "detalhe": "O portfólio é forte em renders 3D e tem só 4 fotos reais de obra. Mais fotos de execução aumentariam a credibilidade das seções de infraestrutura." }
+      "detalhe": "O portfólio é forte em renders 3D e tem só 4 fotos reais de obra. Mais fotos de execução aumentariam a credibilidade das seções de infraestrutura."
+    }
   ],
   "links": {
     "drive": "https://drive.google.com/drive/folders/1bfN1hQPONIp8PnQ81yYAlvw-j3Jost7L",
     "repo": "https://github.com/dev-buildv/sketium-site",
-    "preview": "http://127.0.0.1:4180",
+    "preview": "http://127.0.0.1:4181 (pasta de deploy) · http://127.0.0.1:4180 (Site/)",
     "dominio": null
   }
 }
