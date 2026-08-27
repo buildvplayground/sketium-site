@@ -32,6 +32,7 @@ node_modules/
 Thumbs.db
 *.log
 preview-server.js
+preview-server.py
 
 # Uploads reais do servidor
 uploads/
