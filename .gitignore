@@ -1,0 +1,37 @@
+# ==========================================================
+# BuildV — o repositório versiona SÓ a pasta de deploy.
+# Material-fonte fica local + Google Drive.
+# ==========================================================
+
+# Material bruto e de trabalho — não versionar
+_raw/
+imagens/
+Marca/
+Copys/
+design-system/
+Site/
+site antigo/
+brief-pack.md
+*.psd
+*.ai
+*.dwg
+*.pptx
+
+# Segredos — NUNCA versionar (só o .example)
+db-config.php
+.env
+.env.*
+!.env.example
+*-secret*
+*credenciais*
+
+# Build/infra
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+*.log
+preview-server.js
+
+# Uploads reais do servidor
+uploads/
