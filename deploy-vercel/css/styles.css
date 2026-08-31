@@ -53,7 +53,6 @@
   --secao-y: clamp(4rem, 9vw, 7.5rem);
   --header-h: 84px;
 
-  --filete: 2px;
   --sombra-1: 0 1px 2px rgba(1, 22, 39, .06), 0 2px 8px rgba(1, 22, 39, .05);
   --sombra-2: 0 4px 14px rgba(1, 22, 39, .10), 0 12px 34px rgba(1, 22, 39, .08);
 
@@ -178,7 +177,7 @@ strong { font-weight: 700; color: var(--texto); }
 
 /* ---------- 4. Tipografia utilitária ---------- */
 .eyebrow {
-  display: flex; align-items: center; gap: .6rem;
+  display: block;
   font-family: var(--f-dados);
   font-size: var(--t-xs);
   font-weight: 500;
@@ -187,16 +186,12 @@ strong { font-weight: 700; color: var(--texto); }
   color: var(--acento-texto-claro);
   margin: 0 0 1rem;
 }
-.bg-dark .eyebrow, .hero .eyebrow, .quebra .eyebrow { color: var(--acento-sobre-navy); }
-
-/* Filete-assinatura: elemento real (não pseudo), para não poluir leitores de tela */
-.filete {
-  display: block;
-  width: 34px; height: var(--filete);
-  background: var(--acento);
-  flex: none;
-  transform-origin: left center;
-}
+/* Todo contexto de fundo navy. .pagina-topo não é .bg-dark, e sem esta linha o
+   eyebrow das páginas internas ficava com o laranja de fundo claro (3.41:1). */
+.bg-dark .eyebrow,
+.hero .eyebrow,
+.quebra .eyebrow,
+.pagina-topo .eyebrow { color: var(--acento-sobre-navy); }
 
 .lede {
   font-size: var(--t-md);
@@ -972,17 +967,9 @@ html[data-motion] [data-reveal].visivel { opacity: 1; transform: none; }
 html[data-motion] [data-reveal].sem-anim,
 html[data-motion] [data-reveal="fig"].sem-anim,
 html[data-motion] [data-reveal="fig"].sem-anim img,
-html[data-motion] .filete[data-desenha].sem-anim,
 html[data-motion] .pal > i.sem-anim {
   transition: none !important;
 }
-
-/* --- Filete que desenha --- */
-html[data-motion] .filete[data-desenha] {
-  transform: scaleX(0);
-  transition: transform 760ms var(--e-saida) 140ms;
-}
-html[data-motion] .filete[data-desenha].visivel { transform: scaleX(1); }
 
 /* --- Título palavra a palavra, em máscara --- */
 .pal { display: inline-block; overflow: hidden; vertical-align: bottom; }
@@ -1063,8 +1050,7 @@ html[data-motion] .timeline[data-linha].visivel::before { transform: scaleY(1); 
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html[data-motion] [data-reveal],
-  html[data-motion] .filete[data-desenha] {
+  html[data-motion] [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;

@@ -97,7 +97,7 @@
   }
 
   /* --- 3.2 Reveals ---------------------------------------------------- */
-  var alvos = $$('[data-reveal], .filete[data-desenha], .timeline');
+  var alvos = $$('[data-reveal], .timeline');
   $$('.timeline').forEach(function (t) { t.setAttribute('data-linha', ''); });
 
   // Stagger automático entre irmãos diretos (índice x 80ms, teto de 6)
