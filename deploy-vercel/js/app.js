@@ -46,8 +46,7 @@
      2. WhatsApp — número centralizado numa constante
      ====================================================================== */
   $$('[data-wa-btn]').forEach(function (btn) {
-    var origem = btn.getAttribute('data-wa-btn') || '';
-    var texto = WA_TEXTO + (origem ? ' (' + origem + ')' : '');
+    var texto = WA_TEXTO;
     btn.setAttribute('href', 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto));
     btn.setAttribute('target', '_blank');
     btn.setAttribute('rel', 'noopener');

@@ -456,7 +456,7 @@ strong { font-weight: 700; color: var(--texto); }
 }
 .hero-numeros-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
 }
 .hero-numero { padding: 1.5rem 1.4rem 1.6rem; position: relative; }
