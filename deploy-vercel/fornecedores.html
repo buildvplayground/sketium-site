@@ -21,7 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 <!-- BuildV: GTM (noscript) -->
@@ -205,6 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="index.html#incendio">Projetos de Incêndio</a></li>
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="politica-de-privacidade.html" data-cookie-prefs>Cookies</a></li>
         </ul>
       </div>
       <div>
@@ -224,18 +225,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <aside class="cookies" id="cookies" hidden aria-label="Aviso de cookies">
   <div class="container cookies-inner">
-    <p>Usamos cookies para melhorar sua experiência e entender como o site é utilizado.
-       Você pode aceitar ou recusar os cookies de análise. Veja nossa
-       <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+    <p>Usamos cookies para o site funcionar, medir a audiência e mostrar anúncios a quem já nos visitou.
+       Saiba mais na <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
     <div class="cookies-acoes">
-      <button class="btn btn-primario" type="button" id="cookies-aceitar">Aceitar</button>
-      <button class="btn btn-fantasma" type="button" id="cookies-recusar">Recusar</button>
+      <button class="btn btn-primario" type="button" id="cookies-ok">Entendi</button>
+      <button class="btn btn-fantasma" type="button" id="cookies-mais" aria-expanded="false" aria-controls="cookies-fins">Ver finalidades</button>
     </div>
+    <ul class="cookies-fins" id="cookies-fins" hidden>
+      <li><strong>Essenciais:</strong> fazem o site funcionar.</li>
+      <li><strong>Análise:</strong> Google Analytics, para saber quais páginas e botões funcionam.</li>
+      <li><strong>Publicidade:</strong> Google Ads, Meta e LinkedIn, para mostrar anúncios a quem já visitou o site.</li>
+    </ul>
   </div>
 </aside>
 
 <script src="js/app.js" defer></script>
-<script src="js/cookies.js" defer></script>
+<script src="js/cookies.js?v=2" defer></script>
 <script src="js/formulario.js" defer></script>
 </body>
 </html>
