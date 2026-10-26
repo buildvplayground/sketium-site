@@ -1,58 +1,59 @@
 /* ==========================================================================
-   Banner de cookies — LGPD (Lei 13.709/2018)
-   Carregado em TODAS as páginas. O consentimento emite evento no dataLayer
-   para que as tags (GTM/GA4/Pixel) só disparem depois do aceite.
+   Aviso de cookies — LGPD (Lei 13.709/2018)
+   Carregado em TODAS as páginas. Aviso informativo: as tags do GTM disparam
+   desde o carregamento; o aviso só explica as finalidades e some no "Entendi".
    ========================================================================== */
 (function () {
   'use strict';
 
-  var CHAVE = 'sketium_cookies_v1';
+  var CHAVE = 'cookie_notice';
   var banner = document.getElementById('cookies');
   if (!banner) return;
+  var fins = document.getElementById('cookies-fins');
+  var mais = document.getElementById('cookies-mais');
+  var ok = document.getElementById('cookies-ok');
+  var timer;
 
-  window.dataLayer = window.dataLayer || [];
-
-  function lerEscolha() {
-    try { return localStorage.getItem(CHAVE); } catch (e) { return null; }
+  function jaViu() {
+    try { return localStorage.getItem(CHAVE) === 'ok'; } catch (e) { return false; }
   }
-  function gravarEscolha(v) {
-    try { localStorage.setItem(CHAVE, v); } catch (e) { /* modo privado */ }
+  function gravar() {
+    try { localStorage.setItem(CHAVE, 'ok'); } catch (e) { /* modo privado */ }
   }
 
-  function emitir(estado) {
-    window.dataLayer.push({
-      event: 'cookie_consent',
-      cookie_consent: estado,                    // 'aceito' | 'recusado'
-      analytics_storage: estado === 'aceito' ? 'granted' : 'denied',
-      ad_storage: estado === 'aceito' ? 'granted' : 'denied'
+  function finalidades(abrir) {
+    if (!fins || !mais) return;
+    fins.hidden = !abrir;
+    mais.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+  }
+
+  function abrir(atraso) {
+    clearTimeout(timer);
+    banner.removeAttribute('hidden');
+    requestAnimationFrame(function () {
+      timer = setTimeout(function () { banner.classList.add('aberto'); }, atraso);
     });
   }
 
   function fechar() {
+    clearTimeout(timer);
     banner.classList.remove('aberto');
-    setTimeout(function () { banner.setAttribute('hidden', ''); }, 500);
+    timer = setTimeout(function () { banner.setAttribute('hidden', ''); }, 500);
   }
 
-  function decidir(estado) {
-    gravarEscolha(estado);
-    emitir(estado);
-    fechar();
-  }
+  if (jaViu()) banner.setAttribute('hidden', '');
+  else abrir(700);
 
-  var jaEscolheu = lerEscolha();
-  if (jaEscolheu) {
-    // Reemite a cada carga para que as tags conheçam o estado do consentimento.
-    emitir(jaEscolheu);
-    banner.setAttribute('hidden', '');
-  } else {
-    banner.removeAttribute('hidden');
-    requestAnimationFrame(function () {
-      setTimeout(function () { banner.classList.add('aberto'); }, 700);
+  if (ok) ok.addEventListener('click', function () { gravar(); fechar(); });
+  if (mais) mais.addEventListener('click', function () { finalidades(fins.hidden); });
+
+  // Link "Cookies" do rodapé: reabre o aviso já com as finalidades abertas.
+  [].forEach.call(document.querySelectorAll('[data-cookie-prefs]'), function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      finalidades(true);
+      abrir(0);
+      if (ok) ok.focus();
     });
-  }
-
-  var aceitar = document.getElementById('cookies-aceitar');
-  var recusar = document.getElementById('cookies-recusar');
-  if (aceitar) aceitar.addEventListener('click', function () { decidir('aceito'); });
-  if (recusar) recusar.addEventListener('click', function () { decidir('recusado'); });
+  });
 })();

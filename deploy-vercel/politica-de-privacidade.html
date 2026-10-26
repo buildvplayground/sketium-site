@@ -21,7 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 <!-- BuildV: GTM (noscript) -->
@@ -110,37 +110,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li>Endereço IP, tipo de navegador, sistema operacional e idioma.</li>
         <li>Páginas visitadas, tempo de permanência e origem do acesso.</li>
-        <li>Identificadores de cookies, <strong>somente após o seu consentimento</strong>.</li>
+        <li>Identificadores de cookies de análise e de publicidade (veja o item 4, “Cookies”).</li>
       </ul>
 
       <h2>3. Para que usamos os dados</h2>
       <ul>
         <li><strong>Responder a solicitações de orçamento</strong> e prestar atendimento comercial. Base legal: procedimentos preliminares de contrato (art. 7º, V, LGPD).</li>
         <li><strong>Avaliar cadastros de fornecedores e candidaturas</strong>. Base legal: procedimentos preliminares de contrato e legítimo interesse (art. 7º, V e IX).</li>
-        <li><strong>Medir e melhorar o desempenho do site</strong>. Base legal: consentimento (art. 7º, I), solicitado pelo banner de cookies.</li>
+        <li><strong>Medir e melhorar o desempenho do site</strong>. Base legal: legítimo interesse em medir a audiência do site (art. 7º, IX).</li>
+        <li><strong>Mostrar anúncios da Sketium a quem já visitou o site</strong>. Base legal: legítimo interesse em divulgar os nossos serviços (art. 7º, IX).</li>
         <li><strong>Cumprir obrigações legais e regulatórias</strong>. Base legal: art. 7º, II.</li>
       </ul>
       <p>Não utilizamos seus dados para decisões automatizadas que afetem seus interesses, nem vendemos ou alugamos dados pessoais a terceiros.</p>
 
       <h2>4. Cookies</h2>
       <p>
-        Cookies são pequenos arquivos gravados no seu navegador. Neste site usamos duas categorias:
+        Cookies são pequenos arquivos gravados no seu navegador. Neste site usamos três tipos:
       </p>
       <ul>
-        <li><strong>Necessários:</strong> guardam a sua escolha sobre cookies. Não podem ser desativados porque sem eles o aviso reapareceria a cada visita.</li>
-        <li><strong>De análise e marketing:</strong> só são ativados se você clicar em <strong>“Aceitar”</strong> no banner. Se recusar, as ferramentas de medição não são carregadas.</li>
+        <li><strong>Essenciais:</strong> fazem o site funcionar.</li>
+        <li><strong>De análise</strong> (Google Analytics): mostram quais páginas e botões são usados.</li>
+        <li><strong>De publicidade</strong> (Google Ads, Meta e LinkedIn): permitem mostrar anúncios da Sketium a quem já visitou o site.</li>
       </ul>
+      <p>O link “Cookies”, no rodapé, mostra de novo o aviso com essas finalidades.</p>
       <p>
-        Você pode mudar de ideia a qualquer momento apagando os dados do site no seu navegador;
-        o aviso voltará a aparecer na próxima visita. Também é possível bloquear cookies pelas
-        configurações do navegador, o que pode afetar o funcionamento de algumas partes do site.
+        Para se opor ao uso de cookies de análise e de publicidade, bloqueie ou apague os cookies nas
+        configurações do seu navegador e ajuste as suas preferências de anúncios nas páginas do
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google</a>, da
+        <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Meta</a> e do
+        <a href="https://www.linkedin.com/psettings/advertising" target="_blank" rel="noopener">LinkedIn</a>.
       </p>
 
       <h2>5. Com quem compartilhamos</h2>
       <p>Os dados podem ser tratados por prestadores de serviço que atuam em nosso nome, sempre limitados à finalidade informada:</p>
       <ul>
         <li>Empresa de hospedagem do site.</li>
-        <li>Ferramentas de análise de audiência, quando você consente com os cookies.</li>
+        <li>Ferramentas de análise de audiência e de publicidade (Google, Meta e LinkedIn).</li>
         <li>Plataforma de mensageria (WhatsApp), quando você inicia a conversa por lá.</li>
         <li>Autoridades públicas, quando houver obrigação legal ou ordem judicial.</li>
       </ul>
@@ -229,6 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="fornecedores.html">Fornecedores e Trabalhe Conosco</a></li>
           <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="politica-de-privacidade.html" data-cookie-prefs>Cookies</a></li>
         </ul>
       </div>
       <div>
@@ -248,17 +254,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <aside class="cookies" id="cookies" hidden aria-label="Aviso de cookies">
   <div class="container cookies-inner">
-    <p>Usamos cookies para melhorar sua experiência e entender como o site é utilizado.
-       Você pode aceitar ou recusar os cookies de análise. Veja nossa
-       <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+    <p>Usamos cookies para o site funcionar, medir a audiência e mostrar anúncios a quem já nos visitou.
+       Saiba mais na <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
     <div class="cookies-acoes">
-      <button class="btn btn-primario" type="button" id="cookies-aceitar">Aceitar</button>
-      <button class="btn btn-fantasma" type="button" id="cookies-recusar">Recusar</button>
+      <button class="btn btn-primario" type="button" id="cookies-ok">Entendi</button>
+      <button class="btn btn-fantasma" type="button" id="cookies-mais" aria-expanded="false" aria-controls="cookies-fins">Ver finalidades</button>
     </div>
+    <ul class="cookies-fins" id="cookies-fins" hidden>
+      <li><strong>Essenciais:</strong> fazem o site funcionar.</li>
+      <li><strong>Análise:</strong> Google Analytics, para saber quais páginas e botões funcionam.</li>
+      <li><strong>Publicidade:</strong> Google Ads, Meta e LinkedIn, para mostrar anúncios a quem já visitou o site.</li>
+    </ul>
   </div>
 </aside>
 
 <script src="js/app.js" defer></script>
-<script src="js/cookies.js" defer></script>
+<script src="js/cookies.js?v=2" defer></script>
 </body>
 </html>

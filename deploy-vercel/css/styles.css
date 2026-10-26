@@ -1092,6 +1092,16 @@ html[data-motion] .timeline[data-linha].visivel::before { transform: scaleY(1); 
 .cookies p a { color: var(--acento-sobre-navy); }
 .cookies-acoes { display: flex; gap: .65rem; flex-wrap: wrap; flex: none; }
 .cookies .btn { padding: .75rem 1.25rem; }
+.cookies-fins {
+  flex: 1 1 100%;
+  list-style: none; margin: 0; padding: .9rem 0 0;
+  border-top: 1px solid var(--borda-inversa);
+  display: grid; gap: .4rem;
+  font-size: var(--t-sm); line-height: 1.6;
+  color: var(--texto-inverso-suave);
+}
+.cookies-fins[hidden] { display: none; }
+.cookies-fins strong { color: var(--texto-inverso); font-weight: 600; }
 
 @media (max-width: 560px) {
   .cookies-acoes { width: 100%; }
